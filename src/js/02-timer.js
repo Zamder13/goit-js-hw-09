@@ -37,7 +37,7 @@ const options = {
         const deltaTime = selectedDates[0] - timerCurrentTime;
         const { days, hours, minutes, seconds } = convertMs(deltaTime);
         generateHtmlTime({ days, hours, minutes, seconds });
-        if (deltaTime <= 1000) {
+        if (deltaTime < 1000) {
           clearInterval(timerID);
           return Notiflix.Notify.success('Time to do something😈');
         }
